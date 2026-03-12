@@ -4,7 +4,8 @@ import fs from 'fs-extra';
 import { fileURLToPath, pathToFileURL } from 'url';
 import Store from 'electron-store';
 import { fetchGateIoTrades } from './gate_api.js';
-import { autoUpdater } from 'electron-updater';
+import electronUpdater from 'electron-updater';
+const { autoUpdater } = electronUpdater;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
