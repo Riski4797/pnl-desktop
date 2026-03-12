@@ -1,7 +1,7 @@
 {
   "name": "pnl-desktop",
   "private": true,
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "MyPnL",
   "description": "MyPnL App",
   "type": "module",
@@ -32,7 +32,8 @@
       "oneClick": true,
       "perMachine": false,
       "allowToChangeInstallationDirectory": false,
-      "deleteAppDataOnUninstall": false
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "${productName}-Setup-${version}.${ext}"
     }
   },
   "dependencies": {
