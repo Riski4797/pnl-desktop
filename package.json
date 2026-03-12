@@ -26,11 +26,7 @@
       "repo": "pnl-desktop"
     }],
     "win": {
-      "target": "nsis"
-    },
-    "nsis": {
-      "oneClick": true,
-      "allowToChangeInstallationDirectory": false
+      "target": "portable"
     }
   },
   "dependencies": {
