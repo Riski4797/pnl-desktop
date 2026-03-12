@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 13F: Equity Chart Fade-in Animation */
+@keyframes equityDraw {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.equity-line-anim {
+  animation: equityDraw 0.8s ease-out forwards;
+}
+.equity-area-anim {
+  animation: equityDraw 1s ease-out forwards;
+}
+.equity-chart-svg {
+  overflow: visible;
+}
+
+/* Strategy Lab Affine/Miro Node Handle Aesthetics */
+.react-flow__handle, .react-flow__resize-control {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid white !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+}
+
+.dark .react-flow__handle {
+  border-color: #1e293b !important;
+}
+
+/* Show handles only when hovering the entire node */
+.react-flow__node:hover .react-flow__handle,
+.react-flow__node:focus-within .react-flow__handle,
+.react-flow__handle.connecting,
+.react-flow__node:hover .react-flow__resize-control,
+.react-flow__node:focus-within .react-flow__resize-control {
+  opacity: 1 !important;
+}
+
+/* Slightly scale up the specific handle being hovered */
+.react-flow__handle:hover {
+  transform: scale(1.3) !important;
+}
