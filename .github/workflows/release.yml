@@ -26,7 +26,16 @@ jobs:
       - name: Build Frontend
         run: npm run build
       
-      - name: Build & Publish Electron
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx electron-builder --win --publish always
+      - name: Build Electron
+        run: npx electron-builder --win
+
+      - name: Create Release & Upload Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist-electron/*.exe
+            dist-electron/*.yml
+            dist-electron/*.yaml
+          draft: false
+          prerelease: false
+          generate_release_notes: true
